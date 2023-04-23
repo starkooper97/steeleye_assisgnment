@@ -1,0 +1,11 @@
+The simple List component is a React-based component that can accept an array of items as a prop and render them as a list of items. Each item is rendered as a SingleListItem component, which is a memoized functional component.
+
+The SingleListItem component has four props: index, isSelected, onClickHandler, and text. The index prop represents the index of the item in the array, isSelected is a boolean value indicating whether the item is currently selected, onClickHandler is a function that is called when the item is clicked, and text is the content of the item.
+
+The component renders an <li> element, which is assigned a background color of green if the item is selected, and red if it is not. When the item is clicked, the onClickHandler function is called with the index of the item as an argument.
+
+The List component maps over the array of items and renders each item as a SingleListItem component. It uses the useState hook to keep track of the index of the currently selected item and the useEffect hook to reset the selected index whenever the items array changes. The handleClick function updates the selected index to the index of the clicked item.
+
+The List component renders an unordered list (<ul>) with left-aligned text. It maps over the array of items to render a SingleListItem component for each item. Each SingleListItem component is passed the item's text, index, and a boolean value indicating whether it is currently selected or not.
+
+Finally, both the SingleListItem and List components are memoized using the memo function to optimize performance by preventing unnecessary re-renders when their props remain the same.
